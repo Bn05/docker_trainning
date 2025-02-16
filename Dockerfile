@@ -1,7 +1,7 @@
 # Étape 1 : Construction (builder)
 FROM python:3.13.2-alpine as builder
 
-WORKDIR /opt/projecrt/
+WORKDIR /opt/project/
 
 RUN apk update && apk add --no-cache gcc musl-dev
 
@@ -15,7 +15,7 @@ FROM python:3.13.2-alpine
 WORKDIR opt/projecrt/
 
 # Copier uniquement les fichiers nécessaires depuis l'étape de construction
-COPY --from=builder /opt/projecrt/ /opt/projecrt/
+COPY --from=builder /opt/project/ /opt/project/
 COPY --from=builder /root/.local /root/.local
 
 # Ajouter le dossier des exécutables installés via pip à la variable PATH
