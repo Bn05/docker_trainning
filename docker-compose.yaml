@@ -1,0 +1,12 @@
+# faire un docker login docker-repository.noelb.fr
+# docker-compose up -d
+# aller voir le localhost:8000
+
+services:
+  fast_api:
+    image: docker-registry.noelb.fr/fast_api_env:latest
+    container_name: fast_api
+    ports:
+      - "8000:8000"
+
+

@@ -12,7 +12,7 @@ COPY . .
 # Étape 2 : Image finale de production
 FROM python:3.13.2-alpine
 
-WORKDIR opt/projecrt/
+WORKDIR opt/project/
 
 # Copier uniquement les fichiers nécessaires depuis l'étape de construction
 COPY --from=builder /opt/project/ /opt/project/
